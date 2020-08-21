@@ -23,6 +23,12 @@ class UI {
             this.contactDisplay.innerHTML = output;
         })
     }
+    clearFields() {
+        this.firstName.value = '';
+        this.lastName.value = '';
+        this.email.value = '';
+        this.phone.value = '';
+    }
 }
 
 export const ui = new UI();
