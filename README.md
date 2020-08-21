@@ -24,3 +24,6 @@ run json server and project live in different port
 
 instantiate http and export http
 import to index.js from http.js
+
+getContacts function executes when DOM loaded
+UI section executes
