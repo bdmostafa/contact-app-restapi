@@ -1,13 +1,6 @@
 {
   "contacts": [
     {
-      "id": 1,
-      "firstName": "Mostafa Al",
-      "lastName": "Mahmud",
-      "email": "mdmostafaalmahmud@gmail.com",
-      "phone": "0123456789"
-    },
-    {
       "id": 2,
       "firstName": "Safwan",
       "lastName": "Shams",

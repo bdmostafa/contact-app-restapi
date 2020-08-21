@@ -5,7 +5,8 @@ import { ui } from './ui';
 document.addEventListener('DOMContentLoaded', getContacts);
 // Handle form submit
 document.getElementById('form').addEventListener('submit', submitContact);
-
+// Delete contact
+document.getElementById('contact-list').addEventListener('click', deleteContact);
 
 function getContacts() {
     http
@@ -43,5 +44,20 @@ function submitContact(e) {
                 getContacts();
             })
 
+    }
+}
+
+function deleteContact(e) {
+    // console.log(e.target);
+    const id = e.target.dataset.id;
+    console.log(id);
+    if (e.target.classList.contains('fa-trash')) {
+        http
+            .delete(`http://localhost:3000/contacts/${id}`)
+            .then(() => {
+                console.log('contact deleted.');
+                getContacts();
+            })
+            .catch(err => console.log(err));
     }
 }

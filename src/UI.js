@@ -17,7 +17,7 @@ class UI {
                             <td>${firstName} ${lastName}</td>
                             <td>${email}</td>
                             <td>${phone}</td>
-                            <td><i class="fa fa-trash text-danger"></i> <i class="fa fa-edit text-primary"></i></td>
+                            <td><i class="fa fa-trash text-danger" data-id="${contact.id}"></i> <i class="fa fa-edit text-primary" data-id="${contact.id}"></i></td>
                         </tr>
                     `
             this.contactDisplay.innerHTML = output;
