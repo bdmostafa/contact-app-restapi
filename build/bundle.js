@@ -86,30 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./add.js":
-/*!****************!*\
-  !*** ./add.js ***!
-  \****************/
-/*! exports provided: add, square, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"add\", function() { return add; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"square\", function() { return square; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return squarePlusAdd; });\n// Multiple exports\r\nfunction add(x, y, z) {\r\n    return x + y + z;\r\n}\r\n\r\nfunction square(x) {\r\n    return x * x;\r\n}\r\n\r\n// Default exports\r\n// default export must not be more than one\r\nfunction squarePlusAdd(a, b) {\r\n    return a * a + b;\r\n}\r\n\r\n// Or can be use in separate line like below\r\n// export default squarePlusAdd;\n\n//# sourceURL=webpack:///./add.js?");
-
-/***/ }),
-
-/***/ "./multiply.js":
-/*!*********************!*\
-  !*** ./multiply.js ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction multiply(x, y, z) {\r\n    return x * y * z;\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (multiply);\n\n//# sourceURL=webpack:///./multiply.js?");
-
-/***/ }),
-
 /***/ "./node_modules/babel-polyfill/lib/index.js":
 /*!**************************************************!*\
   !*** ./node_modules/babel-polyfill/lib/index.js ***!
@@ -3862,15 +3838,15 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./sample.js":
-/*!*******************!*\
-  !*** ./sample.js ***!
-  \*******************/
-/*! exports provided: firstName, lastName */
+/***/ "./src/http.js":
+/*!*********************!*\
+  !*** ./src/http.js ***!
+  \*********************/
+/*! exports provided: http */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"firstName\", function() { return firstName; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"lastName\", function() { return lastName; });\nconst firstName = 'Mostafa Al';\r\nconst lastName = 'Mahmud';\r\n\r\n\n\n//# sourceURL=webpack:///./sample.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"http\", function() { return http; });\nclass Http {\r\n    async get(url) {\r\n        const response = await fetch(url).then(data => data.json());\r\n        return response;\r\n    }\r\n    async post(url, data) {\r\n        const response = await fetch(url, {\r\n            method: 'POST',\r\n            body: JSON.stringify(data),\r\n            headers: {\r\n                \"Content-Type\": \"application/json; charset=UTF-8\"\r\n            }\r\n        }).then(data => data.json());\r\n        return response;\r\n    }\r\n    async update(url, data) {\r\n        const response = await fetch(url, {\r\n            method: 'PUT',\r\n            body: JSON.stringify(data),\r\n            headers: {\r\n                \"Content-Type\": \"application/json; charset=UTF-8\"\r\n            }\r\n        }).then(data => data.json());\r\n        return response;\r\n    }\r\n    async delete(url) {\r\n        const response = await fetch(url, {\r\n            method: 'DELETE'\r\n        }).then(data => data.json());\r\n        return response;\r\n    }\r\n}\r\n\r\nconst http = new Http();\n\n//# sourceURL=webpack:///./src/http.js?");
 
 /***/ }),
 
@@ -3882,7 +3858,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _add__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../add */ \"./add.js\");\n/* harmony import */ var _multiply__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../multiply */ \"./multiply.js\");\n/* harmony import */ var _sample__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sample */ \"./sample.js\");\nconsole.log('hello webpack')\r\n\r\nconsole.log(1 + 2);\r\n\r\n\r\n// ES6 module import/export ===========================================\r\n// Import default and multiple functions\r\n// default import must not be more than one\r\n\r\n\r\n// export file name can be changed when importing if it is a default import\r\n// import multiply from '../multiply'\r\n\r\n\r\nconsole.log(Object(_add__WEBPACK_IMPORTED_MODULE_0__[\"add\"])(1, 2, 3), Object(_add__WEBPACK_IMPORTED_MODULE_0__[\"square\"])(3), Object(_add__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(3, 1), Object(_multiply__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(1, 2, 3));\r\n\r\n// import {\r\n//     firstName,\r\n//     lastName\r\n// } from '../sample'\r\n// console.log(firstName, lastName)\r\n\r\n// Or use * for all import files and it returns as an object\r\n\r\n\r\nconsole.log(_sample__WEBPACK_IMPORTED_MODULE_2__[\"firstName\"])\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./http */ \"./src/http.js\");\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

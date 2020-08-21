@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpack Babel | Advance JS Series</title>
-  </head>
 
-  <body>
-    <h1>Welcome to Webpack Babel service</h1>
-    <script src="build/bundle.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Contact App</title>
+  <style>
+    body {
+      background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* opacity: .95; */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Courier New', Courier, monospace;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="jumbotron text-center">
+    <h1 class="display-3">Contact Listing App</h1>
+    <p class="lead">Contact Listing App helps you manage your client data and you can add, edit, delete them as needed.
+    </p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
+
+  <div class="container searchContainer mb-3">
+    <div class="search card card-body mt-5">
+      <h1>Insert the contact info</h1>
+
+      <p class="lead">Put the right information and click the submit button.</p>
+      <form class="container">
+        <fieldset>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter Your first name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter Your last name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+              placeholder="Enter your email">
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="number" class="form-control" id="phone" placeholder="Enter your phone number">
+          </div>
+          <input type="text" id="alert" hidden>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    <br>
+    <div id="display-contacts">
+      <table class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody id="profile-list">
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td><i class="fa fa-trash text-danger"></i> <i class="fa fa-edit text-primary"></i></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5 p-3 text-center bg-transparent">&copy; Copyright 2020. COntact App | Developed by <a
+      class="text-primary font-weight-bold" href="https://github.com/bdmostafa" target="_blank">Mostafa</a>
+  </footer>
+
+
+  <script src="build/bundle.js"></script>
+</body>
+
 </html>
