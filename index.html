@@ -22,7 +22,8 @@
 <body>
   <div class="jumbotron text-center">
     <h1 class="display-3">Contact Listing App</h1>
-    <p class="lead">Contact Listing App helps you manage your client data and you can add, edit, delete them as needed.
+    <p class="lead">Contact Listing App helps you manage your clients listing data and you can add, edit, delete them as
+      needed.
     </p>
     <p class="lead">
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
@@ -35,7 +36,7 @@
 
       <p class="lead">Put the right information and click the submit button.</p>
       <form id="form" class="container">
-        <fieldset>
+        <fieldset id="parent-submit-btn">
           <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" id="firstName" placeholder="Enter Your first name">
@@ -54,8 +55,8 @@
             <label for="phone">Phone</label>
             <input type="number" class="form-control" id="phone" placeholder="Enter your phone number">
           </div>
-          <input type="text" id="alert" hidden>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <input type="text" id="id" hidden>
+          <button id="submit" type="submit" class="btn btn-primary w-100">Submit</button>
         </fieldset>
       </form>
     </div>

@@ -1,18 +1,11 @@
 {
   "contacts": [
     {
-      "id": 2,
-      "firstName": "Safwan",
-      "lastName": "Shams",
-      "email": "safwanshams@gmail.com",
-      "phone": "012345542121"
-    },
-    {
-      "id": 3,
-      "firstName": "Sadia",
-      "lastName": "Akter",
-      "email": "sadiaakter@gmail.com",
-      "phone": "0123456741654"
+      "firstName": "md",
+      "lastName": "ms",
+      "email": "sd@nm.m",
+      "phone": "12354",
+      "id": 2
     }
   ]
 }
