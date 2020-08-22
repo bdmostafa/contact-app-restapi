@@ -6,7 +6,7 @@ import { ui } from './ui';
 // Getting contracts when DOM loaded
 document.addEventListener('DOMContentLoaded', getContacts);
 // Handle form submit
-document.getElementById('form').addEventListener('submit', submitContact);
+document.getElementById('submit').addEventListener('click', submitContact);
 // Delete contact
 document.getElementById('contact-list').addEventListener('click', deleteContact);
 // Update contact
@@ -19,13 +19,12 @@ function getContacts() {
     http
         .get('http://localhost:3000/contacts')
         .then(contacts => ui.showContacts(contacts))
-        .catch(err => console.log(err))
+        .catch(() => ui.showAlert('Oops! Problem found in getting contacts. Please try again!'))
 }
 
 
 function submitContact(e) {
     e.preventDefault();
-    console.log('submit')
     // Selectors
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
@@ -35,7 +34,8 @@ function submitContact(e) {
 
     // Validation
     if (firstName === '' || lastName === '' || email === '' || phone === '') {
-        console.log("Please provide necessary information.");
+        // console.log("Please provide necessary information.");
+        ui.showAlert('Please provide necessary information.', 'danger')
     } else {
         // Sending data to to Server
         const data = {
@@ -53,9 +53,9 @@ function submitContact(e) {
                     // console.log(data);
                     ui.clearFields();
                     getContacts();
+                    ui.showAlert('Contact is added successfully.', 'success');
                 })
         } else {
-            console.log('ok')
             // If id is not empty string, Update contacts in the server
             http
                 .update(`http://localhost:3000/contacts/${id}`, data)
@@ -65,6 +65,8 @@ function submitContact(e) {
                     ui.changeState('add');
                     // Display updated contact information on UI
                     getContacts();
+                    // Show alert
+                    ui.showAlert('Contact updated successfully', 'success')
                 })
         }
     }
@@ -78,10 +80,13 @@ function deleteContact(e) {
         http
             .delete(`http://localhost:3000/contacts/${id}`)
             .then(() => {
-                // console.log('contact deleted');
+                ui.showAlert('Contact deleted successfully.', 'warning');
                 getContacts();
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                // console.log(err);
+                ui.showAlert('Oops! Something error. Please try again.', 'danger');
+            });
     }
 }
 

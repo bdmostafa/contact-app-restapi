@@ -27,3 +27,11 @@ import to index.js from http.js
 
 getContacts function executes when DOM loaded
 UI section executes
+
+Show contacts, delete contacts, edit contacts, update contacts from the server with the help of restAPI
+
+Working with Form data and populating DOM
+
+Changing state when update contacts
+
+showing meaningful messages in application as alert box

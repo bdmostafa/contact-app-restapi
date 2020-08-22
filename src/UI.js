@@ -8,6 +8,7 @@ class UI {
         this.submitBtn = document.getElementById('submit');
         this.parentSubmitBtn = document.getElementById('parent-submit-btn');
         this.idInput = document.getElementById('id');
+        this.form = document.getElementById('form');
 
     }
     showContacts(contacts) {
@@ -64,6 +65,22 @@ class UI {
         this.lastName.value = '';
         this.email.value = '';
         this.phone.value = '';
+    }
+    showAlert(msg, className) {
+        // Create div element
+        const div = document.createElement('div');
+        div.className = `alert alert-${className}`;
+        div.textContent = msg;
+        this.form.insertBefore(div, this.parentSubmitBtn)
+        // Remove alert msg after 3 second automatically
+        setTimeout(() => {
+            this.clearAlert();
+        }, 3000)
+    }
+    clearAlert() {
+        if (document.querySelector('.alert')) {
+            document.querySelector('.alert').remove();
+        }
     }
 }
 
